@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Tree.Infrastructure.Seeders;
 
 namespace Tree.Infrastructure.Extensions
 {
@@ -12,6 +13,8 @@ namespace Tree.Infrastructure.Extensions
             var connectionString = configuration.GetConnectionString("TreeDb");
 
             services.AddDbContext<TreeDbContext>(options => options.UseNpgsql(connectionString));
+
+            services.AddScoped<TreeSeeder>();
         }
     }
 }
