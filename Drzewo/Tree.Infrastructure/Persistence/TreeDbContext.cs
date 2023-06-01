@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Tree.Models;
+using Tree.Domain.Entities;
 
-namespace Tree.Data
+namespace Tree.Infrastructure.Persistence
 {
     public class TreeDbContext : DbContext
     {
@@ -11,22 +11,13 @@ namespace Tree.Data
         public DbSet<Node> Nodes { get; set; }
 
 
-        // When a Node (parent) is deleted, all its associated leaves (children) will also be automatically deleted.
+        // When a Node (parent) is deleted, all its associated children (leaves) will also be automatically deleted.
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Node>()
                 .HasMany(n => n.Children)
                 .WithOne()
                 .OnDelete(DeleteBehavior.Cascade);
-        }
-
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseNpgsql("TreeDb");
-            }
         }
     }
 }

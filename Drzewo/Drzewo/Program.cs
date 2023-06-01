@@ -1,14 +1,11 @@
-using Microsoft.EntityFrameworkCore;
-using Tree.Data;
+using Tree.Infrastructure.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-var connectionString = builder.Configuration.GetConnectionString("TreeDb");
-builder.Services.AddDbContext<TreeDbContext>(options =>
-    options.UseNpgsql(connectionString));
+builder.Services.AddInfrastructure(builder.Configuration);
 
 var app = builder.Build();
 

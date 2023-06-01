@@ -2,21 +2,18 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using Tree.Data;
+using Tree.Infrastructure.Persistence;
 
 #nullable disable
 
-namespace Tree.Migrations
+namespace Tree.Infrastructure.Migrations
 {
     [DbContext(typeof(TreeDbContext))]
-    [Migration("20230531192759_test2")]
-    partial class test2
+    partial class TreeDbContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,7 +22,7 @@ namespace Tree.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("Tree.Models.Node", b =>
+            modelBuilder.Entity("Tree.Domain.Entities.Node", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -47,15 +44,15 @@ namespace Tree.Migrations
                     b.ToTable("Nodes");
                 });
 
-            modelBuilder.Entity("Tree.Models.Node", b =>
+            modelBuilder.Entity("Tree.Domain.Entities.Node", b =>
                 {
-                    b.HasOne("Tree.Models.Node", null)
+                    b.HasOne("Tree.Domain.Entities.Node", null)
                         .WithMany("Children")
                         .HasForeignKey("NodeId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("Tree.Models.Node", b =>
+            modelBuilder.Entity("Tree.Domain.Entities.Node", b =>
                 {
                     b.Navigation("Children");
                 });

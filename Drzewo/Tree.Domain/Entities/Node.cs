@@ -1,6 +1,6 @@
-﻿namespace Tree.Models
+﻿namespace Tree.Domain.Entities
 {
-    public class Node // element in the tree
+    public class Node
     {
         public int Id { get; set; }
         public string Name { get; set; }
