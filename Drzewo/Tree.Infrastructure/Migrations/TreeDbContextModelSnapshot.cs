@@ -37,6 +37,9 @@ namespace Tree.Infrastructure.Migrations
                     b.Property<int?>("NodeId")
                         .HasColumnType("integer");
 
+                    b.Property<string>("ParentNode")
+                        .HasColumnType("text");
+
                     b.HasKey("Id");
 
                     b.HasIndex("NodeId");

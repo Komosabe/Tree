@@ -12,7 +12,7 @@ using Tree.Infrastructure.Persistence;
 namespace Tree.Infrastructure.Migrations
 {
     [DbContext(typeof(TreeDbContext))]
-    [Migration("20230601103335_test")]
+    [Migration("20230601191429_test")]
     partial class test
     {
         /// <inheritdoc />
@@ -39,6 +39,9 @@ namespace Tree.Infrastructure.Migrations
 
                     b.Property<int?>("NodeId")
                         .HasColumnType("integer");
+
+                    b.Property<string>("ParentNode")
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
