@@ -16,7 +16,7 @@ namespace Tree.Application.NodeDto
         [StringLength(20, MinimumLength = 2)]
         public string NewName { get; set; } // new name
         public string ToEditNode { get; set; } // target node
-        public List<Node>? Nodes { get; set; }
+        public List<NodeDto>? Nodes { get; set; }
 
         public bool IsValid()
         {

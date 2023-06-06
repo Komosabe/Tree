@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Tree.Infrastructure.Seeders;
 using Tree.Domain.Interfaces;
 using Tree.Infrastructure.Repositories;
+using Tree.Application.Services;
 
 namespace Tree.Infrastructure.Extensions;
 

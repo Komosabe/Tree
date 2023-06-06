@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
 using System.ComponentModel.DataAnnotations;
 
-namespace Tree.Application.Tree
+namespace Tree.Application.NodeDto
 {
     public class CreateNodeDto
     {
@@ -12,6 +12,4 @@ namespace Tree.Application.Tree
 
         public List<SelectListItem>? Parent { get; set; }
     }
-
-
 }

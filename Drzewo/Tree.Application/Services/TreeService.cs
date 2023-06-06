@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Tree.Application.NodeDto;
-using Tree.Application.Tree;
 using Tree.Domain.Entities;
 using Tree.Domain.Interfaces;
 
@@ -120,5 +119,12 @@ namespace Tree.Application.Services
             return true;
         }
 
+        public async Task<List<NodeDto.NodeDto>> GetNodesOrderedById()
+        {
+            var tree = await _treeRepository.GetNodesOrderedById();
+            var dtos = _mapper.Map<List<NodeDto.NodeDto>>(tree);
+
+            return dtos;
+        }
     }
 }

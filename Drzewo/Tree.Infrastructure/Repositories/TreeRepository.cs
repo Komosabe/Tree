@@ -105,5 +105,10 @@ namespace Tree.Infrastructure.Repositories
         {
             return await _dbContext.Nodes.Include(n => n.Children).FirstOrDefaultAsync(n => n.Id == id);
         }
+
+        public async Task<List<Node>> GetNodesOrderedById()
+        {
+            return await _dbContext.Nodes.OrderBy(n => n.Id).ToListAsync();
+        }
     }
 }

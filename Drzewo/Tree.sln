@@ -5,11 +5,11 @@ VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tree.MVC", "Drzewo\Tree.MVC.csproj", "{0383FF9D-265F-4B6D-B5C8-36FC97A2412C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tree.Domain", "Tree.Domain\Tree.Domain.csproj", "{8DC817B3-41FF-4CFC-91A3-7891DE5080C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tree.Domain", "Tree.Domain\Tree.Domain.csproj", "{8DC817B3-41FF-4CFC-91A3-7891DE5080C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tree.Application", "Tree.Application\Tree.Application.csproj", "{2C76B229-ADA0-49A6-A871-BB9271B26BC2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tree.Application", "Tree.Application\Tree.Application.csproj", "{2C76B229-ADA0-49A6-A871-BB9271B26BC2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tree.Infrastructure", "Tree.Infrastructure\Tree.Infrastructure.csproj", "{AECC8DA4-DCB9-42DB-9964-B58225DB7670}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tree.Infrastructure", "Tree.Infrastructure\Tree.Infrastructure.csproj", "{AECC8DA4-DCB9-42DB-9964-B58225DB7670}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

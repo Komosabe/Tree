@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using Tree.Application.NodeDto;
 using Tree.Application.Services;
-using Tree.Application.Tree;
 using Tree.Domain.Entities;
 using Tree.Domain.Interfaces;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
@@ -63,6 +62,21 @@ namespace Tree.MVC.Controllers
             }
 
             return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> Index(string? message)
+        {
+            if (!string.IsNullOrEmpty(HttpContext.Request.Query["sort"]))
+            {
+                HttpContext.Session.SetString("sort", HttpContext.Request.Query["sort"]);
+            }
+
+            ViewData["Message"] = message;
+            ViewData["Sort"] = HttpContext.Session.GetString("sort");
+
+            var nodes = await _treeService.GetNodesOrderedById();
+
+            return View(nodes);
         }
     }
 }

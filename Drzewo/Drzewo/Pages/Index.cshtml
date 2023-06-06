@@ -1,10 +1,70 @@
 ﻿@page
-@model IndexModel
+@model List<Tree.Application.NodeDto.NodeDto>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Struktura drzewiasta";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+<div class="w-100 text-center bg-danger">
+    @ViewData["Message"]
 </div>
+
+<div class="d-flex" id="app">
+    <div class="w-25">
+        @{
+            //var createNodeDto = new Tree.Application.NodeDto.CreateNodeDto()
+            //{
+            //    Parent = Model.Select(i => new SelectListItem()
+            //    {
+            //        Text = i.Id + ". " + i.Name,
+            //        Value = i.Id.ToString(),
+            //        Selected = false
+            //    }).ToList()
+            //};
+            //await Html.RenderPartialAsync("_CreateForm", createNodeDto);
+        }
+
+    </div>
+    <div class="w-75">
+        @{
+            //var editNodeDto = new Tree.Application.NodeDto.EditNodeDto()
+            //{
+            //    Nodes = Model.ToList()
+            //};
+
+            //await Html.RenderPartialAsync("_EditForm", editNodeDto);
+        }
+    </div>
+</div>
+
+<script>
+    var vueApp = new Vue({
+        el: '#app',
+        data: {
+        },
+        methods: {
+            toggle: function (e) {
+                let list = e.target.parentNode.querySelector("ul").style;
+                list.display != "none" ? list.display = "none" : list.display = "block";
+            },
+
+            foldList: function (e) {
+                let nodes = document.querySelectorAll("#root ul");
+                for (var i = 0; i < nodes.length; i++) {
+                    nodes[i].style.display = "none";
+                }
+            },
+
+            unfoldList: function (e) {
+                let nodes = document.querySelectorAll("#root ul");
+                for (var i = 0; i < nodes.length; i++) {
+                    nodes[i].style.display = "block";
+                }
+            }
+        }
+    })
+</script>

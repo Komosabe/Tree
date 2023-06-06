@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Tree.Application.NodeDto;
-using Tree.Application.Tree;
 using Tree.Domain.Entities;
 
 namespace Tree.Application.Services
@@ -16,5 +15,6 @@ namespace Tree.Application.Services
         Task<bool> IsPossible(Node node, Node targetNode);
         Task<bool> DeleteNode(int id);
         Task<bool> EditNode(EditNodeDto dto);
+        Task<List<NodeDto.NodeDto>> GetNodesOrderedById();
     }
 }

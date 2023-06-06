@@ -17,5 +17,6 @@ namespace Tree.Domain.Interfaces
         Task<Node> GetNodeByName(string name);
         Task UpdateNode(Node node);
         Task<Node> GetNodeWithChildren(int id);
+        Task<List<Node>> GetNodesOrderedById();
     }
 }

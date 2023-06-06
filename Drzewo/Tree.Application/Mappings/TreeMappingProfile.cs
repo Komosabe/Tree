@@ -1,11 +1,5 @@
 ﻿using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Tree.Application.NodeDto;
-using Tree.Application.Tree;
 using Tree.Domain.Entities;
 
 namespace Tree.Application.Mappings
@@ -16,6 +10,7 @@ namespace Tree.Application.Mappings
         {
             CreateMap<EditNodeDto, Domain.Entities.Node>();
             CreateMap<CreateNodeDto, Domain.Entities.Node>();
+            CreateMap<Node, NodeDto.NodeDto>();
         }
     }
 }

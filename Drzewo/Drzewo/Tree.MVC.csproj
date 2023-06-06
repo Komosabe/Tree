@@ -21,8 +21,4 @@
     <ProjectReference Include="..\Tree.Infrastructure\Tree.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Pages\Tree\" />
-  </ItemGroup>
-
 </Project>
